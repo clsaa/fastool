@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.echoclsaa</groupId>
         <artifactId>fastool</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>fastool-logger</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.echoclsaa</groupId>
             <artifactId>fastool-basic</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

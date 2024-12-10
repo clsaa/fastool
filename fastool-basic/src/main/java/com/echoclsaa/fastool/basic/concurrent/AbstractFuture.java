@@ -1,6 +1,5 @@
 package com.echoclsaa.fastool.basic.concurrent;
 
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Locale;
 import java.util.concurrent.*;
@@ -9,7 +8,6 @@ import java.util.concurrent.locks.LockSupport;
 
 import static java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater;
 
-@Slf4j
 public abstract class AbstractFuture<V> extends InternalFutureFailureAccess
         implements ListenableFuture<V> {
 
@@ -53,8 +51,7 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess
         Class<?> ensureLoaded = LockSupport.class;
 
         if (thrownAtomicReferenceFieldUpdaterFailure != null) {
-            log.warn("UnsafeAtomicHelper is broken!", thrownUnsafeFailure);
-            log.warn("SafeAtomicHelper is broken!", thrownAtomicReferenceFieldUpdaterFailure);
+            throw new RuntimeException("UnsafeAtomicHelper is broken!SafeAtomicHelper is broken!");
         }
     }
 

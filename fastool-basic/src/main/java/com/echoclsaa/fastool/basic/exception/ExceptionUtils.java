@@ -1,7 +1,6 @@
 package com.echoclsaa.fastool.basic.exception;
 
 
-import com.echoclsaa.fastool.basic.trace.TraceUtils;
 import com.echoclsaa.fastool.basic.utils.StringUtils;
 
 import java.io.PrintWriter;
@@ -26,7 +25,6 @@ public class ExceptionUtils {
         stringWriter.append(throwable.getClass().getName());
         stringWriter.append(":");
         stringWriter.append(throwable.getMessage());
-        stringWriter.append(StringUtils.format(", traceId:{}", TraceUtils.getTraceId()));
         stringWriter.append(System.lineSeparator());
         throwable.printStackTrace(new PrintWriter(stringWriter));
         return stringWriter.toString();

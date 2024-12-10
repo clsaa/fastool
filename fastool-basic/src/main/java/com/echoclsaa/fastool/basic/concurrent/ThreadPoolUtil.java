@@ -1,7 +1,5 @@
 package com.echoclsaa.fastool.basic.concurrent;
 
-import com.echoclsaa.fastool.basic.logger.Logger;
-import com.echoclsaa.fastool.basic.logger.LoggerFactory;
 
 import java.util.concurrent.*;
 
@@ -10,7 +8,6 @@ import java.util.concurrent.*;
  */
 public class ThreadPoolUtil {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadPoolUtil.class);
 
     private ThreadPoolUtil() {
     }
@@ -54,7 +51,9 @@ public class ThreadPoolUtil {
     );
 
     private static ThreadFactory createThreadFactory(String name) {
-        return new NamedThreadFactory("Fastool-" + name, false, (t, e) -> LOGGER.error(t.getName() + " e", e));
+        return new NamedThreadFactory("Fastool-" + name, false, (t, e) -> {
+            throw new RuntimeException(t.getName() + " e", e);
+        });
     }
 
 }

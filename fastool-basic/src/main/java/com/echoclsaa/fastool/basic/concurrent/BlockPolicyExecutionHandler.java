@@ -2,8 +2,6 @@ package com.echoclsaa.fastool.basic.concurrent;
 
 
 import com.echoclsaa.fastool.basic.exception.ExceptionUtils;
-import com.echoclsaa.fastool.basic.logger.Logger;
-import com.echoclsaa.fastool.basic.logger.LoggerFactory;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -14,8 +12,6 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @author clsaa
  */
 public class BlockPolicyExecutionHandler implements RejectedExecutionHandler {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(BlockPolicyExecutionHandler.class);
 
     private String name;
 
@@ -47,8 +43,6 @@ public class BlockPolicyExecutionHandler implements RejectedExecutionHandler {
              */
             long activeCount = executor.getActiveCount();
 
-            LOGGER.warn("thread pool {} is full. taskCount:{}, completedTaskCount:{}, largestPoolSize:{}, poolSize:{}, activeCount:{}",
-                    name, taskCount, completedTaskCount, largestPoolSize, poolSize, activeCount);
             executor.getQueue().put(r);
         } catch (InterruptedException e) {
             ExceptionUtils.throwException(e);

@@ -1,5 +1,6 @@
 package com.echoclsaa.fastool.extension;
 
+import com.echoclsaa.fastool.basic.lang.URL;
 import com.echoclsaa.fastool.logger.Logger;
 import com.echoclsaa.fastool.logger.LoggerFactory;
 import com.echoclsaa.fastool.basic.utils.StringUtils;
